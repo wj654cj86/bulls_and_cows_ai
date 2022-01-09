@@ -1,0 +1,49 @@
+html {
+	overflow-y : scroll;
+	font-family: Consolas, Microsoft JhengHei;
+	font-size  : 20px;
+}
+
+table {
+	text-align       : center;
+	/* margin-left   : auto; */
+	/* margin-right  : auto; */
+	border-spacing   : 0px;
+	border           : 1px solid #333;
+}
+
+table th {
+	background-color: #134f5c;
+	color           : #fff;
+}
+
+table tr:nth-child(odd) td {
+	background-color: #fff;
+}
+
+table tr:nth-child(even) td {
+	background-color: #ebeff1;
+}
+
+table th,
+table td {
+	width         : 100px;
+	height        : 30px;
+	border        : 1px solid #333;
+	padding-left  : 1px;
+	padding-right : 1px;
+	padding-top   : 1px;
+	padding-bottom: 1px;
+}
+
+button {
+	font-family: Consolas, Microsoft JhengHei;
+	font-size  : 20px;
+}
+
+input[type="text"] {
+	font-family: Consolas, Microsoft JhengHei;
+	font-size  : 20px;
+	width      : 100px;
+	height     : 30px;
+}
