@@ -54,6 +54,7 @@ window.onload = () => {
 		if (資料.length == 0) return;
 		提示(提示輸入.value);
 		顯示表[資料.length - 1].提示.innerHTML = 資料[資料.length - 1].提示[0] + 'A' + 資料[資料.length - 1].提示[1] + 'B';
+		提示輸入.value = '';
 	};
 	重置按鈕.onclick = () => {
 		重置();
