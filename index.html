@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta charset="utf-8">
+	<title>1A2B猜數字</title>
+	<link href="icon.png" rel="icon">
+	<style>
+		body {
+			opacity: 0;
+		}
+
+		iframe {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform-origin: 0px 0px;
+			transform: scale(var(--fm));
+			margin-left: calc(var(--fm) * var(--w) / -2 * 1px);
+			margin-top: calc(var(--fm) * var(--h) / -2 * 1px);
+			width: calc(var(--w) * 1px);
+			height: calc(var(--h) * 1px);
+		}
+	</style>
+	<script src="mylibrary.js"></script>
+	<script>
+		let w = 330, h = 330;
+		function setfoundation() {
+			let fm = Math.min(window.innerWidth / w, window.innerHeight / h, 2);
+			fm = Math.max(fm, 0.25);
+			game.style.setProperty('--fm', fm);
+		}
+		window.onload = function () {
+			game.style.setProperty('--w', w);
+			game.style.setProperty('--h', h);
+			document.body.onresize = setfoundation;
+			setfoundation();
+			document.body.style.opacity = 1;
+			game.focus();
+			window.onmousedown = function () {
+				game.focus();
+			};
+			window.onmouseup = function () {
+				game.focus();
+			};
+			window.onclick = function () {
+				game.focus();
+			};
+		};
+	</script>
+</head>
+
+<body>
+	<iframe id="game" src="main.html" frameborder="no"></iframe>
+</body>
+
+</html>
