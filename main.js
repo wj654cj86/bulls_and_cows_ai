@@ -26,6 +26,14 @@ function 重置() {
 
 let 顯示表 = [];
 
+function 從一開始(n) {
+	let m = [];
+	for (let i = 0; i < 4; i++) {
+		m[i] = (n[i] * 1 + 1) % 10;
+	}
+	return m.join('');
+}
+
 window.onload = () => {
 	let tbody = document.getElementsByTagName('tbody')[0];
 	for (let i = 0; i < 7; i++) {
@@ -39,7 +47,7 @@ window.onload = () => {
 	猜測按鈕.onclick = () => {
 		if (資料.length == 0 || 資料[資料.length - 1].提示 !== undefined) {
 			if (資料.length) 當前節點 = 當前節點[資料[資料.length - 1].提示.join('')];
-			顯示表[資料.length].數字.innerHTML = 猜測().join('');
+			顯示表[資料.length].數字.innerHTML = 從一開始(猜測());
 		}
 	};
 	提示按鈕.onclick = () => {
